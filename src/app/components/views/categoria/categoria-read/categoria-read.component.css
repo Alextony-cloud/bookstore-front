@@ -13,3 +13,24 @@
     color: rgb(212, 207, 207);
     font-weight: 500;
 }
+
+button{
+    margin-bottom: .8rem;
+}
+
+.livros{
+    margin-left: .3rem;
+}
+
+.edit{
+    color: chocolate;   
+}
+
+.delete{
+    color: rgb(122, 40, 40);
+    
+}
+
+.mat-reader{
+    width: 5rem;
+}
