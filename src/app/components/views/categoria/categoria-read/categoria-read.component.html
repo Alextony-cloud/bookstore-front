@@ -15,12 +15,13 @@
           <td mat-cell *matCellDef="let row"> {{row.id}} </td>
         </ng-container>
       
-        <!-- Name Column -->
-        <ng-container matColumnDef="nome">
+         <!-- Name Column -->
+         <ng-container matColumnDef="nome">
           <th mat-header-cell *matHeaderCellDef> Nome </th>
           <td mat-cell *matCellDef="let row"> {{row.nome}} </td>
         </ng-container>
-      
+
+
         <!-- Weight Column -->
         <ng-container matColumnDef="descricao">
           <th mat-header-cell *matHeaderCellDef> Descrição </th>
@@ -40,7 +41,7 @@
         <ng-container matColumnDef="acao">
           <th class="mat-reader" mat-header-cell *matHeaderCellDef> Ações </th>
           <td mat-cell *matCellDef="let row"> 
-            <a class="edit" href="#">
+            <a class="edit" routerLink="update/{{row.id}}">
                 <i class="material-icons">edit</i>
             </a>
             <a class="delete" routerLink="delete/{{row.id}}">
