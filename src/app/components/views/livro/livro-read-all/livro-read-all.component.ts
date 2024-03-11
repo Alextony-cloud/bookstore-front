@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LivroService } from '../livro.service';
 import { Livro } from '../livro.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-livro-read-all',
@@ -16,7 +16,7 @@ export class LivroReadAllComponent implements OnInit{
 
   displayedColumns: string[] = ['id', 'titulo', 'livros', 'acao'];
 
-  constructor(private service: LivroService, private router: ActivatedRoute){}
+  constructor(private service: LivroService, private router: ActivatedRoute, private routerLink: Router){}
   
   ngOnInit(): void {
     this.id_cat = this.router.snapshot.paramMap.get('id_cat')!;
@@ -28,6 +28,10 @@ export class LivroReadAllComponent implements OnInit{
       this.livros = r
       console.log(this.livros)
     }))
+  }
+
+  navegarParaLivroCreate(){
+    this.routerLink.navigate([`categorias/${this.id_cat}/livros/create`])
   }
 
 }
